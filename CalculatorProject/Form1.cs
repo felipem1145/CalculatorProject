@@ -24,12 +24,21 @@ namespace CalculatorProject
         bool multFlag = false;
         bool subsFlag = false;
         bool sumFlag = false;
+
+        private void restartOperations()
+        {
+            dotFlag = false;
+            divFlag = false;
+            multFlag = false;
+            subsFlag = false;
+            sumFlag = false;
+        }
         private void BtnRestart_Click(object sender, EventArgs e)
         {
             num = "";
             dotFlag = false;
             positiveFlag = true;
-            divFlag = false;
+            restartOperations();
             txtDisplay.Text = num;
         }
 
@@ -126,18 +135,30 @@ namespace CalculatorProject
         private void BtnNegative_Click(object sender, EventArgs e)
         {
             double posNumber;
-            if (positiveFlag)
+
+            if (num == "-")
             {
-                num = "-" + num;
-                txtDisplay.Text = num;
-                positiveFlag = false;
-            }
-            else
-            {
-                posNumber = -1 * Convert.ToDouble(num);
-                num = Convert.ToString(posNumber);
+                num = "";
                 txtDisplay.Text = num;
                 positiveFlag = true;
+            }
+                
+            else
+            {
+                if (positiveFlag)
+                {
+                    num = "-" + num;
+                    txtDisplay.Text = num;
+                    positiveFlag = false;
+                }  
+                else
+                {
+                    posNumber = -1 * Convert.ToDouble(num);
+                    num = Convert.ToString(posNumber);
+                    txtDisplay.Text = num;
+                    positiveFlag = true;
+                }
+            
             }
             
         }
@@ -172,6 +193,7 @@ namespace CalculatorProject
                 resultDiv = div1 / div2;
                 num = Convert.ToString(resultDiv);
                 txtDisplay.Text = num;
+                restartOperations();
             } else if (multFlag)
             {
                 double resultMult;
@@ -179,6 +201,7 @@ namespace CalculatorProject
                 resultMult = mult1 * mult2;
                 num = Convert.ToString(resultMult);
                 txtDisplay.Text = num;
+                restartOperations();
             } else if (subsFlag)
             {
                 double resultSubs;
@@ -186,13 +209,16 @@ namespace CalculatorProject
                 resultSubs = subs1 - subs2;
                 num = Convert.ToString(resultSubs);
                 txtDisplay.Text = num;
-            }else if (sumFlag)
+                restartOperations();
+            }
+            else if (sumFlag)
             {
                 double resultSum;
                 double sum2 = Convert.ToDouble(num);
                 resultSum = sum1 + sum2;
                 num = Convert.ToString(resultSum);
                 txtDisplay.Text = num;
+                restartOperations();
             }
             else
             {

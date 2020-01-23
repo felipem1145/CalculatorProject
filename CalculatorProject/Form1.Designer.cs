@@ -206,6 +206,7 @@
             this.txtDisplay.Name = "txtDisplay";
             this.txtDisplay.Size = new System.Drawing.Size(405, 20);
             this.txtDisplay.TabIndex = 16;
+            this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnDiv
             // 
