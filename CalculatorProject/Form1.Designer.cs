@@ -55,6 +55,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtConverted = new System.Windows.Forms.TextBox();
             this.btnChange = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button7
@@ -275,6 +277,7 @@
             this.btnLength.Text = "Length";
             this.btnLength.UseVisualStyleBackColor = true;
             this.btnLength.Visible = false;
+            this.btnLength.Click += new System.EventHandler(this.btnLength_Click);
             // 
             // btnWeight
             // 
@@ -285,6 +288,7 @@
             this.btnWeight.Text = "Weight";
             this.btnWeight.UseVisualStyleBackColor = true;
             this.btnWeight.Visible = false;
+            this.btnWeight.Click += new System.EventHandler(this.btnWeight_Click);
             // 
             // label1
             // 
@@ -320,19 +324,42 @@
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(184, 125);
+            this.btnChange.Location = new System.Drawing.Point(184, 115);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(75, 23);
             this.btnChange.TabIndex = 28;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Visible = false;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(207, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Kilometers";
+            this.label3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(207, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Miles";
+            this.label4.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 524);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.txtConverted);
             this.Controls.Add(this.label2);
@@ -396,6 +423,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtConverted;
         private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -18,6 +18,7 @@ namespace CalculatorProject
         }
 
         string num="";
+        string numConv = "";
         bool positiveFlag = true;
         bool dotFlag = false;
         bool divFlag = false;
@@ -25,6 +26,11 @@ namespace CalculatorProject
         bool subsFlag = false;
         bool sumFlag = false;
         bool calculatorMode = true;
+        bool lengthMode = true;
+        bool changeFlag = true;
+        int opCounter = 0;
+ 
+        
         
 
         private void restartOperations()
@@ -42,6 +48,7 @@ namespace CalculatorProject
             positiveFlag = true;
             restartOperations();
             txtDisplay.Text = num;
+            txtConverted.Text = numConv;
         }
 
         private void Button12_Click(object sender, EventArgs e)
@@ -75,63 +82,83 @@ namespace CalculatorProject
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(4);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void Button11_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(0);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         
         private void Button1_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(1);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(2);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(3);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(5);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(6);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void Button7_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(7);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void Button8_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(8);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void Button9_Click(object sender, EventArgs e)
         {
+            
             num = num + Convert.ToString(9);
             txtDisplay.Text = num;
+            converterMode();
         }
 
         private void BtnNegative_Click(object sender, EventArgs e)
@@ -186,7 +213,7 @@ namespace CalculatorProject
             divFlag = true;
         }
 
-        private void BtnResult_Click(object sender, EventArgs e)
+        private void resultMt()
         {
             if (divFlag)
             {
@@ -196,7 +223,8 @@ namespace CalculatorProject
                 num = Convert.ToString(resultDiv);
                 txtDisplay.Text = num;
                 restartOperations();
-            } else if (multFlag)
+            }
+            else if (multFlag)
             {
                 double resultMult;
                 double mult2 = Convert.ToDouble(num);
@@ -204,7 +232,8 @@ namespace CalculatorProject
                 num = Convert.ToString(resultMult);
                 txtDisplay.Text = num;
                 restartOperations();
-            } else if (subsFlag)
+            }
+            else if (subsFlag)
             {
                 double resultSubs;
                 double subs2 = Convert.ToDouble(num);
@@ -227,6 +256,10 @@ namespace CalculatorProject
                 txtDisplay.Text = num;
             }
         }
+        private void BtnResult_Click(object sender, EventArgs e)
+        {
+            resultMt();
+        }
 
         //PRODUCT
         double mult1;
@@ -238,6 +271,8 @@ namespace CalculatorProject
             positiveFlag = true;
             txtDisplay.Text = num;
             multFlag = true;
+
+
         }
 
         //SUBSTRACT
@@ -306,13 +341,164 @@ namespace CalculatorProject
                 button10.Text = "Conversor Mode";
                 label1.Visible = false;
                 label2.Visible = false;
+                label3.Visible = false;
+                label4.Visible = false;
                 btnChange.Visible = false;
                 txtConverted.Visible = false;
+                lengthMode = true;
+                changeFlag = true;
 
             }
             
 
             
+        }
+
+        private void converterMode()
+        {
+            if (calculatorMode == false )
+            {
+                if (changeFlag)
+                {
+                    if (num == "")
+                    {
+                        return;
+                    }
+                    if (lengthMode)
+                    {
+                        double kilomt = Convert.ToDouble(num) * 1.60934;
+                        txtConverted.Text = Convert.ToString(kilomt);
+
+                    }
+                    else
+                    {
+                        double kilogr = Convert.ToDouble(num) * 0.453592;
+                        txtConverted.Text = Convert.ToString(kilogr);
+
+                    }
+                }
+                else
+                {
+                    if (num == "")
+                    {
+                        return;
+                    }
+                    if (lengthMode)
+                    {
+                        double miles = Convert.ToDouble(num) * 0.621371;
+                        txtConverted.Text = Convert.ToString(miles);
+
+                    }
+                    else
+                    {
+                        double pound = Convert.ToDouble(num) * 2.20462;
+                        txtConverted.Text = Convert.ToString(pound);
+
+                    }
+                }
+
+            }
+        }
+        private void btnLength_Click(object sender, EventArgs e)
+        {
+            if (lengthMode == false)
+            {
+                lengthMode = true;
+                if (changeFlag)
+                {
+                    label1.Text = "Miles";
+                    label2.Text = "Kilometers";
+                }
+                else
+                {
+                    label3.Text = "Kilometers";
+                    label4.Text = "Miles";
+                }
+
+
+
+                if (num == "")
+                {
+                    return;
+                }
+                converterMode();
+            }
+
+        }
+
+        private void changeConv()
+        {
+            if (changeFlag)
+            {
+                label1.Visible = false;
+                label2.Visible = false;
+                label3.Visible = true;
+                label4.Visible = true;
+                if (lengthMode)
+                {
+                    label3.Text = "Kilometers";
+                    label4.Text = "Miles";
+                }
+                else
+                {
+                    label3.Text = "Kilograms";
+                    label4.Text = "Pounds";
+                }
+                changeFlag = false;
+            }
+            else
+            {
+                label1.Visible = true;
+                label2.Visible = true;
+                label3.Visible = false;
+                label4.Visible = false;
+
+                if (lengthMode)
+                {
+                    label1.Text = "Miles";
+                    label2.Text = "Kilometers";
+                }
+                else
+                {
+                    label1.Text = "Pounds";
+                    label2.Text = "Kilograms";
+                }
+                changeFlag = true;
+            }
+        }
+
+        private void btnWeight_Click(object sender, EventArgs e)
+        {
+            if (lengthMode)
+            {
+                lengthMode = false;
+                if (changeFlag)
+                {
+                    label1.Text = "Pounds";
+                    label2.Text = "Kilograms";
+                }
+                else
+                {
+                    label3.Text = "Kilograms";
+                    label4.Text = "Pounds";
+                }
+
+                if (num == "")
+                {
+                    return;
+                }
+                converterMode();
+            }
+            
+
+
+        }
+
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            changeConv();
+            converterMode();
         }
     }
 }
