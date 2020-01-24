@@ -24,6 +24,8 @@ namespace CalculatorProject
         bool multFlag = false;
         bool subsFlag = false;
         bool sumFlag = false;
+        bool calculatorMode = true;
+        
 
         private void restartOperations()
         {
@@ -263,6 +265,54 @@ namespace CalculatorProject
             positiveFlag = true;
             txtDisplay.Text = num;
             sumFlag = true;
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            if (calculatorMode)
+            {
+                btnLength.Visible = true;
+                btnWeight.Visible = true;
+                btnResult.Visible = false;
+                btnSum.Visible = false;
+                btnDiv.Visible = false;
+                btnMult.Visible = false;
+                btnRest.Visible = false;
+                txtDisplay.Width = 292;
+                txtDisplay.Height = 64;
+                calculatorMode = false;
+                button10.Text = "Calculator Mode";
+                label1.Visible = true;
+                label2.Visible = true;
+                btnChange.Visible = true;
+                txtConverted.Visible = true; 
+
+            }
+            else
+            {
+                btnLength.Visible = false;
+                btnWeight.Visible = false;
+                btnResult.Visible = true;
+                btnSum.Visible = true;
+                btnDiv.Visible = true;
+                btnMult.Visible = true;
+                btnRest.Visible = true;
+                btnLength.Visible = false;
+                btnWeight.Visible = false;
+                txtDisplay.Visible = true;
+                txtDisplay.Width = 405;
+                txtDisplay.Height = 196;
+                calculatorMode = true;
+                button10.Text = "Conversor Mode";
+                label1.Visible = false;
+                label2.Visible = false;
+                btnChange.Visible = false;
+                txtConverted.Visible = false;
+
+            }
+            
+
+            
         }
     }
 }

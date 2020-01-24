@@ -17,3 +17,13 @@ C:\Users\ANDRES FELIPE\Documents\GitHub\CalculatorProject\CalculatorProject\obj\
 C:\Users\ANDRES FELIPE\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.csproj.GenerateResource.cache
 C:\Users\ANDRES FELIPE\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.exe
 C:\Users\ANDRES FELIPE\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.pdb
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\bin\Debug\CalculatorProject.exe.config
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\bin\Debug\CalculatorProject.exe
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\bin\Debug\CalculatorProject.pdb
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.csprojAssemblyReference.cache
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.Form1.resources
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.Properties.Resources.resources
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.csproj.GenerateResource.cache
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.csproj.CoreCompileInputs.cache
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.exe
+C:\Users\Programming12\Documents\GitHub\CalculatorProject\CalculatorProject\obj\Debug\CalculatorProject.pdb
